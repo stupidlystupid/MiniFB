@@ -5,18 +5,18 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <div class="h5">@ArnoldM</div>
+                    <div class="h5">@Valencia</div>
                     <div class="h7 text-muted">Fullname : Luther James Valencia</div>
                     <div class="h7">Developer of web applications</div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <div class="h6 text-muted">Followers</div>
-                        <div class="h5">5</div>
+                        <div class="h5">104</div>
                     </li>
                     <li class="list-group-item">
                         <div class="h6 text-muted">Following</div>
-                        <div class="h5">5</div>
+                        <div class="h5">111</div>
                     </li>
                     <li class="list-group-item">DevZ</li>
                 </ul>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="btn-toolbar justify-content-between">
                         <div class="btn-group">
-                            <button type="submit" class="btn btn-primary">Post</button>
+                            <a type="submit" class="btn btn-primary" href="{% url 'post-create' %}">Post</a>
                         </div>
                         <div class="btn-group">
                             <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -82,7 +82,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="mr-2">
-                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                                <img class="rounded-circle" width="45" src="{{ user.profile.image.url }}" alt="">
                             </div>
                                 <div class="ml-2">
                                     <div class="h5 m-0">{{ post.author }}</div>
@@ -107,7 +107,7 @@
             <div class="card-body">
                 <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{ post.date_posted }}</div>
                     <a class="card-link" href="#">
-                        <h5 class="card-title">{{ post.title }}</h5>
+                        <h5><a class="card-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
                     </a>
         
                     <p class="card-text">
@@ -128,8 +128,8 @@
         <div class="col-md-3">
             <div class="card gedf-card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <h5 class="card-title">Day 1</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Sample card</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                     <a href="#" class="card-link">Card link</a>
@@ -138,7 +138,7 @@
             </div>
             <div class="card gedf-card mt-3">
                     <div class="card-body">
-                        <h5 class="card-title">Card 2 title</h5>
+                        <h5 class="card-title">Day 2</h5>
                         <p class="card-text">Sample post.</p>
                         <a href="#" class="card-link">Card link</a>
                         <a href="#" class="card-link">Another link</a>
